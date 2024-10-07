@@ -1,0 +1,37 @@
+body{
+    font-family: "Baloo Paaji 2", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #F3EEEA;
+    background-color: #4f4840;
+    padding: 20px;
+}
+
+.day-square, .day-square-disabled, .today{
+    width: 30px;
+    height: 30px;
+    background-color: #4f4840;
+    border: 1px solid #ada597;
+    border-radius: 5px;
+}
+.today{
+    background-color: #ada597;
+    border: 1px solid #ada597;
+    cursor: pointer;
+}
+.today:hover{
+    background-color: #ada597;
+    border: 3px solid #d3c8b6;
+    transition: all 350ms ease-in-out;
+}
+
+.day-square-disabled{
+    background-color: #5e564d;
+    border: 1px solid #5e564d;
+}
+
+.grid{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 7px;
+}
