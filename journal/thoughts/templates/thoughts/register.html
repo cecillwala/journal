@@ -1,0 +1,27 @@
+{% extends "thoughts/layout.html" %}
+
+{% block title %}Treasure Vault | Register{% endblock %}
+
+{% block main %}
+    <div class="registration-container">
+        <h1>Register Here !!!</h1>
+        <br/>
+        <hr/>
+        <form class="register-form" id="register-form">
+            <strong id="match"></strong>
+            <div class="flex">
+                <label for="username">Username: </label>
+                <input class="input" required placeholder="Username" onchange="reg_validation()" type="text" autocomplete="off" id="username">
+            </div>
+            <div class="flex">
+                <label for="password">Password:</label>
+                <input class="input" required placeholder="Password" onchange="reg_validation()" type="password" autocomplete="off" id="password">
+            </div>
+            <div class="flex">
+                <label for="confirmation">Confirm Password:</label>
+                <input class="input" required placeholder="Confirm Password" autocomplete="off" onchange="reg_validation()" type="password" id="confirmation">
+            </div>
+            <input class="register-btn" type="submit" disabled id="register-btn" value="Register">
+        </form>
+    </div>
+{% endblock %}

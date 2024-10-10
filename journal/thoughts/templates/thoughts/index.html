@@ -1,5 +1,16 @@
 {% extends "thoughts/layout.html" %}
-{% block title %}Homepage{% endblock %}
+{% block title %}Treasure Vault | Home{% endblock %}
 {% block main %}
-    <div id="grid" class="grid"></div>
+    <div id="container">
+        <div id="calendar">
+            <div id="grid" class="grid"></div>
+        </div>
+        <div id="new-entry" class="new-entry">
+            {% csrf_token %}
+            <form class="new-entry-form" id="entry-form">
+                <textarea rows="16" id="entry" cols="105"></textarea>
+                <input type="submit" class="submit-btn">
+            </form>
+        </div>
+    </div>
 {% endblock %}

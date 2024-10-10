@@ -1,0 +1,23 @@
+{% extends "thoughts/layout.html" %}
+
+{% block title %}Treasure Vault | Login{% endblock %}
+
+{% block main %}
+<div class="registration-container">
+    <h1>Welcome Back!</h1>
+    <br/>
+    <hr/>
+    <form class="register-form" id="register-form">
+        <strong id="login-match"></strong>
+        <div class="flex">
+            <label for="username">Username: </label>
+            <input class="input" required placeholder="Username" onchange="login_validation()" type="text" autocomplete="off" id="username">
+        </div>
+        <div class="flex">
+            <label for="password">Password:</label>
+            <input class="input" required placeholder="Password" onchange="login_validation()" type="password" autocomplete="off" id="password">
+        </div>
+        <input class="register-btn" type="submit" disabled id="register-btn" value="Login">
+    </form>
+</div>
+{% endblock %}
