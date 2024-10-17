@@ -105,12 +105,21 @@ label{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: baseline;
 }
-
+.navbar-grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 10px;
+}
+.username{
+    grid-column-end: 6;
+}
 .nav-link{
     text-decoration: none;
     padding-left: 35px;
     font-size: 22px;
+    border: 1px #ccc solid;
 }
 
 .flex{
