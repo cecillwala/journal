@@ -2,28 +2,28 @@ document.addEventListener("DOMContentLoaded", () => {
     day_square();
 
     // register form
-    // document.querySelector("#register-form").addEventListener('submit', async (event) => {
-    //     event.preventDefault();
-    //     const response = await fetch('register', {
-    //         method:'POST',
-    //         body: JSON.stringify({
-    //             username: document.getElementById('username').value,
-    //             password: document.getElementById('password').value,
-    //             confirmation: document.getElementById('confirmation').value
-    //         })
-    //     });
-    //     const status = await response.json();
-    //     if(status == 305){
-    //         document.getElementById('match').innerHTML = 'Password and confirmation do not match!!!';
-    //     }
-    //     else if(status == 302){
-    //         document.getElementById('match').innerHTML = 'Username already exists!!!';
-    //     }
-    //     else{
-    //         document.getElementById('match').innerHTML = '';
-    //         window.location.href = "home";
-    //     }
-    // });
+    document.querySelector("#register-form").addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const response = await fetch('register', {
+            method:'POST',
+            body: JSON.stringify({
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+                confirmation: document.getElementById('confirmation').value
+            })
+        });
+        const status = await response.json();
+        if(status == 305){
+            document.getElementById('match').innerHTML = 'Password and confirmation do not match!!!';
+        }
+        else if(status == 302){
+            document.getElementById('match').innerHTML = 'Username already exists!!!';
+        }
+        else{
+            document.getElementById('match').innerHTML = '';
+            window.location.href = "home";
+        }
+    });
 });
     //login form
 async function login_func(event) {
@@ -46,6 +46,29 @@ async function login_func(event) {
     }
     else{
         match.innerHTML = '';
+        window.location.href = "/";
+    }
+}
+
+async function register_func(event) {
+    event.preventDefault();
+    const response = await fetch('register', {
+        method:'POST',
+        body: JSON.stringify({
+            username: document.getElementById('username').value,
+            password: document.getElementById('password').value,
+            confirmation: document.getElementById('confirmation').value
+        })
+    });
+    const status = await response.json();
+    if(status == 305){
+        document.getElementById('match').innerHTML = 'Password and confirmation do not match!!!';
+    }
+    else if(status == 302){
+        document.getElementById('match').innerHTML = 'Username already exists!!!';
+    }
+    else{
+        document.getElementById('match').innerHTML = '';
         window.location.href = "/";
     }
 }

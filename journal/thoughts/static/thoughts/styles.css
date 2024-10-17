@@ -87,7 +87,7 @@ textarea:focus, .input:focus{
 }
 
 label{
-    text-align: right;
+    text-align: left;
 }
 .submit-btn, .register-btn{
     background-color: #dfdad5;
@@ -113,20 +113,22 @@ label{
     gap: 10px;
 }
 .username{
-    grid-column-end: 6;
+    grid-column-end: 7;
 }
 .nav-link{
+    padding-right: 20px;
     text-decoration: none;
-    padding-left: 35px;
     font-size: 22px;
-    border: 1px #ccc solid;
+    text-align: right;
 }
 
+.nav-header{
+    text-align: left;
+}
 .flex{
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    gap: 40px;
-    align-items: center;
+    align-items: baseline;
     width: 100%;
 }

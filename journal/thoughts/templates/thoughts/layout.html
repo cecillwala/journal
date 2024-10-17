@@ -13,14 +13,18 @@
     <body>
         <nav class="navbar-grid">
           <header>
-            <a class="nav-link" href="{% url 'index' %}"><h2>Treasure Vault</h2></a>
+            <a class="nav-link nav-header" href="{% url 'index' %}"><h2>Treasure Vault</h2></a>
           </header>
             {%if user.is_authenticated %}
-              <div class="username"><h5>Signed in as {{ user.username }}</h5></div>
-              <div ><a class="nav-link" href="{% url 'login' %}">Log Out</a></div>
+              <div class="username flex">
+                <a class="nav-link">Signed in as <strong>{{ user.username }}</strong></a>
+                <a class="nav-link" href="{% url 'login' %}">Log Out</a>
+              </div>
             {% else %}
-              <a class="nav-link" href="{% url 'register' %}">Register</a>
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
+              <div class="username flex">
+                <a class="username nav-link" href="{% url 'register' %}">Register</a>
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </div>
             {% endif %}
         </nav>
         {% block main %}{% endblock %}
